@@ -1,48 +1,47 @@
 // Inverse Of Number
-// Code getting segmentation error
-// Not working effeciently
 
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    int num;
+    int num;        // enter the number
     cin >> num;
-    int num_length = num;
+    int num2 = num;       // new varible to change value of num
 
-    int length = 0;
-    while (num_length > 0)
+    int length = 0;         // for length of string
+    while (num2 > 0)
     {
         length++;
-        num_length /= 10;
+        num2 /= 10;
     }
 
-    int length2 = length;
-    int arrint[length];
+    int arrint[length];     // to store face and space value seperately
 
-    int position = length-1;
-    while (num > 0)
+    int position = 0;
+    int num3 = num;       // new varible to change value of num
+    while (position < length && num3 > 0)       // to save values in an array in reverse order
     {
-        int start = num % 10;
-        num /= 10;
+        int start = num3 % 10;
+        num3 /= 10;
         arrint[position] = start;
-        position--;
+        position++;
     }
 
+    int length2 = length;       // new varible to change value of length
     int arrint2[length2];
 
     while (length2 > 0)
     {
-        int face = arrint[length2];
+        int face = arrint[length2 - 1];
         int place = length2;
-        arrint2[face] = place;
+        arrint2[face - 1] = place;
         length2--;
     }
 
-    for (int i = 0; i < length; i++)
+    for (int i = length-1; i >= 0; i--)
     {
-        cout << arrint2[i] << " ";
+        cout << arrint2[i];
     }
 
     return 0;
