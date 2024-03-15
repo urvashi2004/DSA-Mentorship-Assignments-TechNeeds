@@ -1,0 +1,22 @@
+pair<long long, long long> getMinMax(long long a[], int n) {
+      long long int minnum = a[0];
+      long long int maxnum = a[0];
+      
+      for (int minindex=0; minindex<n; minindex++)
+      {
+          if (minnum > a[minindex])
+          {
+              minnum = a[minindex];
+          }
+      }
+      
+      for (int maxindex=0; maxindex<n; maxindex++)
+      {
+          if (maxnum < a[maxindex])
+          {
+              maxnum = a[maxindex];
+          }
+      }
+      
+       return std::make_pair(minnum,maxnum);
+  }
