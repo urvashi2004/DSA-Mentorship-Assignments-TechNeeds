@@ -1,0 +1,12 @@
+int findFrequency(vector<int> Arr, int X){
+    int freq = 0;
+    
+    for (int index=0; index<Arr.size(); index++)
+    {
+        if (Arr[index]==X)
+        {
+            freq++;
+        }
+    }
+    return freq;
+}
