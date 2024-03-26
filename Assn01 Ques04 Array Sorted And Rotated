@@ -1,0 +1,43 @@
+class Solution {
+public:
+    bool check(vector<int>& nums) {
+        int smallerSecondNum = 0;
+        int number = nums.size();
+        int arrPositions[number];
+        bool restSorted1 = true;
+        bool restSorted2 = true;
+
+        for (int i = 1; i < number; i++)
+        {
+            if (nums[i-1] > nums[i])
+            {
+                arrPositions[smallerSecondNum] = i-1;
+                smallerSecondNum++;
+            }
+
+            if (smallerSecondNum >= 1)
+            {
+                for (int j = i+1; j < number; j++)
+                {
+                    if (nums[j-1] > nums[j])
+                    {
+                        restSorted1 = false;
+                    }
+                }
+                if (nums[0] < nums[number-1])
+                {
+                    restSorted2 = false;
+                }
+            }
+        }
+
+        if ((smallerSecondNum == 0) || ((restSorted1 == true) && (restSorted2 == true)))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+};
