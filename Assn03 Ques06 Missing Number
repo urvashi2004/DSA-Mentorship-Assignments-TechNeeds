@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int size = nums.size();
+        for (int checkNum = 0; checkNum <= size; checkNum++) {
+            bool present = false;
+            for (int j = 0; j < size; j++){
+                if (nums[j] == checkNum){
+                    present = true;
+                }
+            }
+            if (present == false){
+                return checkNum;
+            }
+        }
+        return -1;
+    }
+};
