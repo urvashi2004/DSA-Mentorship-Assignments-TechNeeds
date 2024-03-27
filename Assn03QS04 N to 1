@@ -1,0 +1,8 @@
+vector<int> printNos(int x) {
+    // Write Your Code Here
+    vector<int> result;
+    for (int i = x; i>=1; i--){
+        result.push_back(i);
+    }
+    return result;
+}
