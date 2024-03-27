@@ -1,0 +1,16 @@
+class Solution {
+public:
+    void moveZeroes(std::vector<int>& nums) {
+        int number = nums.size();
+        for (int i = 0; i < number; i++) {
+            if (nums[i] == 0) {
+                for (int j = i; j < number - 1; j++) {
+                    nums[j] = nums[j + 1];
+                }
+                nums[number - 1] = 0;
+                i--; // Decrement i to recheck the current position
+                number--; // Decrement number as the last element is now 0
+            }
+        }
+    }
+};
