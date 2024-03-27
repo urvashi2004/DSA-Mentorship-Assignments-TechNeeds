@@ -1,0 +1,12 @@
+#include <bits/stdc++.h> 
+int largestElement(vector<int> &arr, int n) {
+    // Write your code here.
+    int largest = arr[0];
+    int size = arr.size();
+    for (int i = 1; i<size; i++) {
+        if (arr[i] > largest){
+            largest = arr[i];
+        }
+    }
+    return largest;
+}
